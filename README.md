@@ -1,5 +1,5 @@
 # preload.js
-PreloaderJS is a simple JS preloader. It's purpose is to allow the developer to be sure all necessary media is loaded before running the web app.
+PreloaderJS is a simple JS preloader. Its purpose is to allow the developer to be sure all necessary media is loaded before running the web app. If necessary, the developer can set a timeout if it needs to load within a certain time.
 
 # Requirements
 It requires jQuery and is tested with v1.8.2.
@@ -16,7 +16,8 @@ Not much to say. Check out the example for all necessary functions and options.
 	{
 		var preloader
 		preloader = new Preloader({
-		    // Timeout of content hasn't completely loaded within 2000ms
+		    // Timeout if content isn't completely loaded within 2000ms
+		    // Set to 0 if there should be no timeout
 		    timeout : 2000
 		    
 		    // Callback function to execute when all items are loaded

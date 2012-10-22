@@ -10,7 +10,7 @@
 		this.items = [];
 
 		this.defaults = {
-			timeout            : 1000,              // Time in ms before timeout
+			timeout            : 0,                 // Time in ms before timeout
 			loadedItemCallback : function(n, t) {}, // Callback for each loaded item
 			finishedCallback   : function() {},     // Callback for finished loading
 			timeoutCallback    : function() {}      // Callback for time out
@@ -41,7 +41,10 @@
 		 */
 		start : function()
 		{
-			this.startWatchdog();
+			if (this.options.timeout > 0)
+			{
+				this.startWatchdog();
+			}
 			this.step();
 		},
 		/**
