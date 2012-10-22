@@ -46,6 +46,11 @@ Not much to say. Check out the example for all necessary functions and options.
 	
 		preloader.start();
 	});
+	
+# Changelog
+
+## v0.1 - 2012-10-22
+* First version
 
 # License
 
