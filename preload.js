@@ -56,10 +56,15 @@
 			var item;
 			item = this.items.pop();
 			
-			// Preload item
-			if (!!item && item.tag == 'audio')
+			if (!item)
 			{
-				var $tag =  $('<' + item.tag + '/>', {
+				return
+			}
+
+			// Preload item
+			if (item.tag == 'audio' || item.tag == 'video')
+			{
+				var $tag =  $('<' + item.tag + '>', {
 					src  : item.src
 				});
 				$tag.bind('canplay', function()
@@ -69,9 +74,9 @@
 					self.preloadCallback();
 				});
 			}
-			else if (!!item)
+			else
 			{
-				$('<' + item.tag + '/>', {
+				$('<' + item.tag + '>', {
 					src  : item.src,
 					load : function()
 					{
